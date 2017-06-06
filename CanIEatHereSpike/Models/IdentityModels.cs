@@ -9,7 +9,6 @@ namespace CanIEatHereSpike.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        public virtual Review Review { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -27,23 +26,20 @@ namespace CanIEatHereSpike.Models
         {
         }
 
-        public DbSet<Review> Reviews { get; set; }
-
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<ApplicationUser>()
-                .HasOptional(m => m.Review)
-                .WithRequired(m => m.ApplicationUser)
-                .Map(p => p.MapKey("UserID"));
-        }
-
-        //public static ApplicationDbContext Create()
-
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{
-        //    return new ApplicationDbContext();
+        //    base.OnModelCreating(modelBuilder);
+
+        //    modelBuilder.Entity<ApplicationUser>()
+        //        .HasOptional(m => m.Review)
+        //        .WithRequired(m => m.ApplicationUser)
+        //        .Map(p => p.MapKey("UserID"));
         //}
+
+        public static ApplicationDbContext Create()
+
+        {
+            return new ApplicationDbContext();
+        }
     }
 }

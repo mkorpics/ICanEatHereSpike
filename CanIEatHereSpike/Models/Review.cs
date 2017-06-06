@@ -10,7 +10,7 @@ namespace CanIEatHereSpike.Models
     public class Review
     {
         [Key]
-        public int ReviewID;
+        public int ReviewID { get; set; }
 
         public string NumFoodOptions { get; set; }
         public int NumFoodOptionsRating { get; set; }
@@ -18,15 +18,13 @@ namespace CanIEatHereSpike.Models
         public int OverallRating { get; set; }
         public DateTime PostDate { get; set; }
 
-        public virtual ApplicationUser ApplicationUser { get; set; }
-
         [ForeignKey("DietaryRestriction")]
         public int DietaryRestrictionID { get; set; }
         public virtual List<DietaryRestriction> DietaryRestriction { get; set; }
 
-        [ForeignKey("Restaurant")]
-        public int RestaurantID { get; set; }
-        public virtual Restaurant Restuarant { get; set; }
+        //[ForeignKey("Restaurant")]
+        //public int RestaurantID { get; set; }
+        //public virtual Restaurant Restuarant { get; set; }
 
         public virtual ICollection<FoodItem> FoodItems { get; set; }
 

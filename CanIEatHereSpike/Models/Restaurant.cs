@@ -11,6 +11,6 @@ namespace CanIEatHereSpike.Models
         [Key]
         public int RestaurantID { get; set; }
 
-
+        //public virtual ICollection<Review> Reviews { get; set; }
     }
 }

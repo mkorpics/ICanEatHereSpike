@@ -6,7 +6,8 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    
+    
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -36,9 +37,11 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
+    
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBk0uA5zKZMDJmD5WUVLJq2gosxwV5GM_c&libraries=places"></script>
+    <script src="~/Scripts/googlePlaces.js"></script>
 </body>
 </html>
